@@ -68,7 +68,9 @@ public class ConcertController {
     @GetMapping("/delete-concert")
     public String removeAllConcerts() {
         // TODO: clear all employees and reset id
+
         concerts.clear();
+        nextId = 1;
 
         // TODO: redirect to list concerts
         return "redirect:/concert";
