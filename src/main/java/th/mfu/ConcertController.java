@@ -35,7 +35,7 @@ public class ConcertController {
         // TODO: add concerts to model
         model.addAttribute("concerts", concerts.values());
         // TODO: return a template to list concerts
-        return "listConcerts";
+        return "list-concert";
     }
 
     @GetMapping("/add-concert")
@@ -54,7 +54,7 @@ public class ConcertController {
         concerts.put(nextId, concert);
         nextId++;
         // TODO: redirect to list concerts
-        return " redirect:/concerts ";
+        return "redirect:/concerts";
     }
 
     @GetMapping("/delete-concert/{id}")
@@ -68,12 +68,10 @@ public class ConcertController {
     @GetMapping("/delete-concert")
     public String removeAllConcerts() {
         // TODO: clear all employees and reset id
-
         concerts.clear();
         nextId = 1;
-
         // TODO: redirect to list concerts
-        return "redirect:/concert";
+        return "redirect:/concerts";
     }
 
 }
